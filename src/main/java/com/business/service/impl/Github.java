@@ -5,5 +5,5 @@ package com.business.service.impl;
  */
 public class Github {
     int i = 0;
-
+    int j = 10;;
 }
