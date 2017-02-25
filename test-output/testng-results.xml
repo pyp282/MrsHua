@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="TmpSuite" duration-ms="95" started-at="2017-02-25T13:57:36Z" finished-at="2017-02-25T13:57:36Z">
+    <groups>
+    </groups>
+    <test name="TmpTest" duration-ms="95" started-at="2017-02-25T13:57:36Z" finished-at="2017-02-25T13:57:36Z">
+      <class name="test.failures.ChildTest">
+        <test-method status="PASS" signature="childTest()[pri:0, instance:test.failures.ChildTest@34e239]" name="childTest" duration-ms="45" started-at="2017-02-25T21:57:36Z" finished-at="2017-02-25T21:57:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- childTest -->
+      </class> <!-- test.failures.ChildTest -->
+    </test> <!-- TmpTest -->
+  </suite> <!-- TmpSuite -->
+</testng-results>
