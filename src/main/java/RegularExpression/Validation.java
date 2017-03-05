@@ -85,6 +85,54 @@ public class Validation {
 
         return matchResult(regex, str);
     }
+
+    //check whether a given value is an valid url or not
+    public static String checkURL(String url){
+        String regex = "^(?:(?:https?|ftp):\\/\\/)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))(?::\\d{2,5})?(?:\\/\\S*)?$";
+
+        return matchResult(regex, url);
+    }
+
+    // check whether a given value is alpha numeric or not
+    public static String alphaNuCheck(String value){
+        String regex = "^[a-zA-Z0-9]+$";
+
+        return matchResult(regex, value);
+    }
+
+    //  whether a given value is hexadecimal value or not.
+    public static String hexadecimalCheck(String value){
+        String regex = "^[0-9a-fA-f]$";
+
+        return matchResult(regex, value);
+    }
+
+    //check whether a given value represents a domain or not
+    public static String domainCheck(String str){
+        String regex = "^[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,6}$";
+        return matchResult(regex, str);
+        //Exception in thread "main" java.util.regex.PatternSyntaxException: Unclosed counted closure near index 42
+        // format error.
+    }
+
+    //check whether a given value is html or not
+    public static String HtmlCheck(String str){
+        String regex = "<([a-z]+) *[^/]*?>";
+
+        return matchResult(regex, str);
+    }
+
+    // check a given value contains alpha, dash and underscore.
+    public static String charCheck(String str){
+        String regex = "^[a-z0-9\\-_]+$";
+
+        return matchResult(regex, str);
+    }
+
+    // print an integer with commas as thousands separators
+    public static void thousand_separator(String numeric){
+        String regex = "\\B(?=(\\d{3})+(?!\\d))";
+    }
     public static void main(String[] args) {
         List<String> datas = new ArrayList<>();
         //test the first character of a string is uppercase or not.
@@ -131,9 +179,17 @@ public class Validation {
 //        String str = " count number of words in string ";
 //        System.out.println(countWords(str));
 
-        String IPstr = "this is a ip 12.23.23.255";
-        System.out.println(checkIP(IPstr));
+//        String IPstr = "this is a ip 12.23.23.255";
+//        System.out.println(checkIP(IPstr));
 
+//        String url = "www.baidu.com";
+//        System.out.println(checkURL(url));
+
+//        String domain = "bai.du.baidu.com";
+//        System.out.println(domainCheck(domain));
+
+        System.out.println(charCheck("12-133"));
+        System.out.println( charCheck("100_23"));
     }
 
 }
