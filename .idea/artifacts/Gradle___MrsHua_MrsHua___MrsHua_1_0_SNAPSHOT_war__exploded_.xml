@@ -11,6 +11,14 @@
           <element id="module-output" name="MrsHua" />
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: org.testng:testng:6.8" />
+          <element id="library" level="project" name="Gradle: junit:junit:4.10" />
+          <element id="library" level="project" name="Gradle: org.beanshell:bsh:2.0b4" />
+          <element id="library" level="project" name="Gradle: com.beust:jcommander:1.27" />
+          <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.6" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.1" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/MrsHua/exploded/MrsHua-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
