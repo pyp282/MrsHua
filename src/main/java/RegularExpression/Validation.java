@@ -59,7 +59,30 @@ public class Validation {
 
     //work as a trim function
     public static String trimer(String str){
-        String regex = "";
+        String regex = "^\\s+|\\s+$";
+        return str.replaceAll(regex, "");
+    }
+
+    // count number of words in string
+    public static int countWords(String str){
+        int count = 0;
+        str = trimer(str);
+        String regex = "\\b[a-zA-Z]+\\b";
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        while(matcher.find()){
+            count++;
+        }
+
+        return count;
+    }
+
+    //check IP value
+    public static String checkIP(String str){
+        //192.255.255.255
+        String regex = "(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$";
+
         return matchResult(regex, str);
     }
     public static void main(String[] args) {
@@ -90,12 +113,27 @@ public class Validation {
 //        }
 
         //search date from string
-        datas.add("Albert Einstein was born in Ulm, on 13/03/1879");
-        datas.add(" in Ulm, on 1/03/1879");
+//        datas.add("Albert Einstein was born in Ulm, on 13/03/1879");
+//        datas.add(" in Ulm, on 1/03/1879");
+//
+//        for (String data :datas){
+//            System.out.println(searchDate(data));
+//        }
+//        String str = " hello world  ";
+//        StringBuffer sb = new StringBuffer("hello world ");
+//
+//        System.out.println(trimer(str));
+//
+//        sbTrimer(sb);
+//        System.out.println(sb);
 
-        for (String data :datas){
-            System.out.println(searchDate(data));
-        }
+        // count number of words in string
+//        String str = " count number of words in string ";
+//        System.out.println(countWords(str));
+
+        String IPstr = "this is a ip 12.23.23.255";
+        System.out.println(checkIP(IPstr));
+
     }
 
 }
